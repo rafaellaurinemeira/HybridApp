@@ -103,5 +103,7 @@ function someFunction() {
 ```
 ## Example
 Download or clone the example project.
+
+The example show how to get the photo from library or camera.
 ## License
 HybridApp is available under the MIT license. See the LICENSE file for more info.
