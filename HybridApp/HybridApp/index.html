@@ -1,0 +1,80 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=no" />
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <style>
+      .btn {
+          position: relative;
+          display: block;
+          margin: 30px auto;
+          padding: 0;
+          overflow: hidden;
+          border-width: 0;
+          outline: none;
+          border-radius: 2px;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+          color: #ecf0f1;
+          transition: background-color .3s;
+          background-color: #e74c3c;
+      }
+  
+  .btn > * {
+      position: relative;
+  }
+  
+  .btn span {
+      display: block;
+      padding: 12px 24px;
+  }
+  
+  *, *:before, *:after { box-sizing: border-box; }
+  
+  html {
+      position: relative;
+      height: 100%;
+  }
+  
+  body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding-top: 100px;
+      background-color: #f4f4f6;
+      color: #34495e;
+      font-family: Trebuchet, Arial, sans-serif;
+      text-align: center;
+  }
+  
+  h2 {
+      font-weight: normal;
+  }
+  #image {
+      height: 200px;
+      width: 200px;
+      margin: 10px auto;
+      border: 1px solid gray;
+      border-radius: 2px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+  </style>
+</head>
+<script>
+function onSuccess(path) {
+    document.getElementById("image").style.backgroundImage =  "url("+path+")";
+}
+function onError(message) {
+    alert(message);
+}
+function openCamera() {
+  Bridge.exec("openCamera", ["onSuccess", "onError", 20]);
+}
+</script>
+<body>
+  <h1>Hybrid App iOS</h1>
+  <h2>Create your hybrid app without framework. Make it's easy.</h2>
+  <button class="btn" type="button" onclick="openCamera()"><span>Open Camera</span></button>
+  <div id="image"></div>
+</body>
